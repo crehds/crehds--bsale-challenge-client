@@ -13,6 +13,7 @@ module.exports = {
     'no-console': ['warn', { allow: ['warn', 'error', 'info'] }],
     'comma-dangle': 'off',
     'implicit-arrow-linebreak': 'off',
-    'function-paren-newline': 'off'
+    'function-paren-newline': 'off',
+    'import/extensions': ['error', 'always']
   }
 };
