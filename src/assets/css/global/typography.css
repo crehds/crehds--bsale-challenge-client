@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Source+Sans+Pro:wght@400;600;700&display=swap');
+
+body h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Source Sans Pro', sans-serif, monospace;
+  font-weight: 700;
+}
+
+body {
+  font-family: 'Roboto', sans-serif, monospace;
+}
+
+.heading-xx--large {
+  font-size: 6rem;
+  line-height: 6rem;
+}
+
+.heading-x-large {
+  font-size: 4.8rem;
+  line-height: 4.8rem;
+}
+
+.heading-large {
+  font-size: 3.6rem;
+  line-height: 4rem;
+}
+
+.heading-base {
+  font-size: 3rem;
+  line-height: 3.6rem;
+}
+
+.heading-small {
+  font-size: 2.4rem;
+  line-height: 3.2rem;
+}
+
+.heading-x--small {
+  font-size: 2rem;
+  line-height: 2.8rem;
+}
+
+.content-x--large {
+  font-size: 2rem;
+  line-height: 2.8rem;
+}
+
+.content-large {
+  font-size: 1.8rem;
+  line-height: 2.8rem;
+}
+
+.content-base {
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+}
+
+.content-small {
+  font-size: 1.4rem;
+  line-height: 2rem;
+}
+
+.content-x-small {
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+}
