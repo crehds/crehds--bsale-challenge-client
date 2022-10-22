@@ -3,7 +3,7 @@
 
 const store = {
   categories: [],
-  currentCategory: '',
+  currentCategory: {},
   productsByCategory: []
 };
 
@@ -11,8 +11,16 @@ function setCategories(newCategories) {
   store.categories = newCategories;
 }
 
+function updateCategory(nameCategory) {
+  const newCategory = store.categories.find(
+    (category) => category.name === nameCategory
+  );
+  store.currentCategory = { ...newCategory };
+  return newCategory;
+}
+
 function setCurrentCategory(category) {
-  store.currentCategory = category;
+  store.currentCategory = { ...category };
 }
 
 function setCurrentProduct(newProduct) {
@@ -28,5 +36,6 @@ export default {
   setCategories,
   setCurrentCategory,
   setCurrentProduct,
-  setProductsByCategory
+  setProductsByCategory,
+  updateCategory
 };

@@ -12,12 +12,21 @@ function render() {
   return `<div class="home">${createNavBar()}${createMain()}</div>`;
 }
 
+async function changeProducts(category) {
+  const newCategory = Store.updateCategory(category);
+  await getProductsByCategoryFromAPI(newCategory.id);
+  LoadModule(ListOfProducts, '.js--list--products');
+}
+
 function listenersToCategories() {
   const categories = document.querySelectorAll('.navbar--list__item');
   categories.forEach((category) => {
-    category.addEventListener('click', async (e) =>
-      console.log(e.currentTarget)
-    );
+    category.addEventListener('click', async (e) => {
+      const text = e.currentTarget.firstElementChild.textContent;
+      const { currentCategory } = Store.store;
+      if (text === currentCategory.name) return 0;
+      return changeProducts(text);
+    });
   });
 }
 
