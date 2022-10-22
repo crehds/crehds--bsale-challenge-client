@@ -6,6 +6,7 @@ async function getCategoriesFromAPI() {
 
   if (response.ok) {
     const categories = await response.json();
+    Store.setCurrentCategory(categories[0]);
     return Store.setCategories(categories);
   }
 

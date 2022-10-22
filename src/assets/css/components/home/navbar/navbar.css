@@ -1,6 +1,6 @@
 .navbar {
   /* border: 1px solid red; */
-  min-width: 10rem;
+  min-width: 20rem;
   display: flex;
   gap: 5rem;
   padding: 0.8rem 0.5rem;

@@ -2,6 +2,7 @@
 @import url('./global/typography.css');
 @import url('./global/colors.css');
 @import url('./components/home/navbar/navbar.css');
+@import url('./components/home/main/main.css');
 @import url('./components/home/home.css');
 
 body {
