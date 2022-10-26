@@ -1,10 +1,12 @@
 import LoadModule from '../LoadModule.js';
 import productsServices from '../services/products.js';
 import ListOfProducts from './ListOfProducts.js';
+import Spinner from './Spinner.js';
 
 const handleProductsByName = async (event) => {
   event.preventDefault();
   const { names } = event.target;
+  LoadModule(Spinner, '.js--list--products');
   await productsServices.getProductsByName(names.value);
   LoadModule(ListOfProducts, '.js--list--products');
 };

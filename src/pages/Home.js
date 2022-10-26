@@ -2,6 +2,7 @@ import createMain from '../components/createMain.js';
 import createNavBar from '../components/createNav.js';
 import ListOfProducts from '../components/ListOfProducts.js';
 import { listenerForm } from '../components/Search.js';
+import Spinner from '../components/Spinner.js';
 import DOMHandler from '../DomHandler.js';
 import LoadModule from '../LoadModule.js';
 import getCategories from '../services/categories.js';
@@ -15,6 +16,7 @@ function render() {
 
 async function changeProducts(category) {
   const newCategory = Store.updateCategory(category);
+  LoadModule(Spinner, '.js--list--products');
   await productsService.getProductsByCategory(newCategory.id);
   LoadModule(ListOfProducts, '.js--list--products');
 }
