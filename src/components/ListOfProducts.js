@@ -22,8 +22,8 @@ function createListOfProduct(productsList) {
 }
 
 function render() {
-  const { productsByCategory } = Store.store;
-  return createListOfProduct(productsByCategory);
+  const { products } = Store.store;
+  return createListOfProduct(products);
 }
 
 export default Component({

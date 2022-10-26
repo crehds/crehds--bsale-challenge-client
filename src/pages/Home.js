@@ -1,10 +1,11 @@
 import createMain from '../components/createMain.js';
 import createNavBar from '../components/createNav.js';
 import ListOfProducts from '../components/ListOfProducts.js';
+import { listenerForm } from '../components/Search.js';
 import DOMHandler from '../DomHandler.js';
 import LoadModule from '../LoadModule.js';
-import getCategoriesFromAPI from '../services/categories.js';
-import getProductsByCategoryFromAPI from '../services/products.js';
+import getCategories from '../services/categories.js';
+import productsService from '../services/products.js';
 import Store from '../store/store.js';
 import Component from '../utils/Component.js';
 
@@ -14,7 +15,7 @@ function render() {
 
 async function changeProducts(category) {
   const newCategory = Store.updateCategory(category);
-  await getProductsByCategoryFromAPI(newCategory.id);
+  await productsService.getProductsByCategory(newCategory.id);
   LoadModule(ListOfProducts, '.js--list--products');
 }
 
@@ -32,13 +33,13 @@ function listenersToCategories() {
 
 async function preloadProducts() {
   const { currentCategory } = Store.store;
-  await getProductsByCategoryFromAPI(currentCategory.id);
+  await productsService.getProductsByCategory(currentCategory.id);
   LoadModule(ListOfProducts, '.js--list--products');
 }
 
 async function preloadCategories() {
   if (Store.store.categories.length === 0) {
-    await getCategoriesFromAPI();
+    await getCategories();
     preloadProducts();
     DOMHandler.reload();
   }
@@ -46,7 +47,7 @@ async function preloadCategories() {
 
 const Home = Component({
   render,
-  listeners: [listenersToCategories],
+  listeners: [listenersToCategories, listenerForm],
   preloaders: [preloadCategories]
 });
 
