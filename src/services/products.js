@@ -14,7 +14,7 @@ async function getProductsByCategory(categoryId) {
 
 async function getProductsByName(names) {
   const response = await fetch(
-    `${BASE_URI}/products/search--by--names?names=${names}`
+    `${BASE_URI}/products/search--by--names?name1=${names.name1}&name2=${names.name2}&name3=${names.name3}`
   );
 
   if (response.ok) {

@@ -8,6 +8,7 @@ import getCategories from '../services/categories.js';
 import productsService from '../services/products.js';
 import Store from '../store/store.js';
 import Component from '../utils/Component.js';
+import CATEGORIES from '../utils/categories.js';
 
 function render() {
   const navbar = NavBar();
@@ -16,9 +17,9 @@ function render() {
 }
 
 async function changeProducts(category) {
-  const newCategory = Store.updateCategory(category);
+  const { name } = Store.updateCategory(category);
   LoadModule(Spinner, '.js--list--products');
-  await productsService.getProductsByCategory(newCategory.id);
+  await productsService.getProductsByName(CATEGORIES[name]);
   LoadModule(ListOfProducts, '.js--list--products');
 }
 
