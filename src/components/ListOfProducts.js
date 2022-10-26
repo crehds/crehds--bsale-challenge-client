@@ -25,10 +25,20 @@ function isProductWithDiscount(discount, price) {
   return `<p>${formatPrice}</p>`;
 }
 
+function setDiscount(discount) {
+  if (discount) {
+    return `<div class="discount">
+      <p>-${discount}%</p>
+    </div>`;
+  }
+  return '';
+}
+
 function createProducts(products) {
   return products.reduce((memo, item) => {
     let tmp = memo;
     tmp += `<div class="product-card">
+              ${setDiscount(item.discount)}
               <figure class="product-image">
                 <img src=${item.url_image || DEFAULT_IMAGE} />
               </figure>
