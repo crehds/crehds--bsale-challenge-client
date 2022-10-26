@@ -1,6 +1,6 @@
 function Component({ render, listeners, preloaders }) {
-  return () => ({
-    toString: () => render(),
+  return (props) => ({
+    toString: () => render(props),
     addListeners() {
       listeners.forEach((fn) => fn());
     },
