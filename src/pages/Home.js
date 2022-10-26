@@ -23,6 +23,16 @@ async function changeProducts(category) {
   LoadModule(ListOfProducts, '.js--list--products');
 }
 
+function activeCategory(item) {
+  const activeItem = document.querySelector('.navbar--list__item.active');
+  if (activeItem) {
+    activeItem.classList.remove('active');
+  }
+  if (item) {
+    item.classList.add('active');
+  }
+}
+
 function listenersToCategories() {
   const categories = document.querySelectorAll('.navbar--list__item');
   categories.forEach((category) => {
@@ -30,14 +40,25 @@ function listenersToCategories() {
       const text = e.currentTarget.firstElementChild.textContent;
       const { currentCategory } = Store.store;
       if (text === currentCategory.name) return 0;
+      activeCategory(e.currentTarget);
       return changeProducts(text);
     });
   });
 }
 
+function defaultCategory(currentCategory) {
+  const categories = document.querySelectorAll('.navbar--list__item');
+  const defaultItem = [...categories].find(
+    (category) => category.firstElementChild.textContent === currentCategory
+  );
+
+  activeCategory(defaultItem);
+}
+
 async function preloadProducts() {
   const { currentCategory } = Store.store;
   await productsService.getProductsByCategory(currentCategory.id);
+  defaultCategory(currentCategory.name);
   LoadModule(ListOfProducts, '.js--list--products');
 }
 

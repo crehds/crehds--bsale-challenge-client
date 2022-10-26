@@ -49,3 +49,9 @@
   background-color: var(--red-1);
   color: var(--primary-100);
 }
+
+.navbar--list__item.active {
+  font-weight: bold;
+  background-color: var(--red-1);
+  color: var(--primary-100);
+}
