@@ -6,8 +6,8 @@ export default {
     this.parent = parent;
     // eslint-disable-next-line no-param-reassign
     parent.innerHTML = module;
-    module?.addListeners();
-    module?.addPreloaders();
+    module.addListeners();
+    module.addPreloaders();
   },
   reload() {
     this.load(this.module, this.parent);
