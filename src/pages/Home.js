@@ -1,7 +1,6 @@
 import Main from '../components/Main.js';
 import NavBar from '../components/NavBar.js';
 import ListOfProducts from '../components/ListOfProducts.js';
-import { listenerForm } from '../components/Search.js';
 import Spinner from '../components/Spinner.js';
 import DOMHandler from '../DomHandler.js';
 import LoadModule from '../LoadModule.js';
@@ -23,7 +22,7 @@ async function changeProducts(category) {
   LoadModule(ListOfProducts, '.js--list--products');
 }
 
-function activeCategory(item) {
+export function activeCategory(item) {
   const activeItem = document.querySelector('.navbar--list__item.active');
   if (activeItem) {
     activeItem.classList.remove('active');
@@ -69,6 +68,20 @@ async function preloadCategories() {
     DOMHandler.reload();
   }
 }
+
+const handleProductsByName = async (event) => {
+  event.preventDefault();
+  const { names } = event.target;
+  LoadModule(Spinner, '.js--list--products');
+  activeCategory();
+  await productsService.getProductsByName(names.value);
+  LoadModule(ListOfProducts, '.js--list--products');
+};
+
+const listenerForm = () => {
+  const form = document.querySelector('.js--search--products');
+  form.addEventListener('submit', handleProductsByName);
+};
 
 const Home = Component({
   render,

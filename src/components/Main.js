@@ -1,4 +1,4 @@
-import { Search } from './Search.js';
+import Search from './Search.js';
 import Spinner from './Spinner.js';
 
 const createMain = () => {
