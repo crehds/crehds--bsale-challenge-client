@@ -1,7 +1,9 @@
+import { Search } from './Search.js';
+
 const createMain = () => {
-  const title = 'Este es el nuevo main';
+  const search = Search();
   return `<div class="main">
-    ${title}
+    ${search}
     <div class="js--list--products"></div>
   </>`;
 };
