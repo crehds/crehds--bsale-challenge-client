@@ -4,12 +4,12 @@ A single page application with vanilla Javascript and CSS connected with [Bsale 
 
 ## Build With
 
-|                                                   |                                                        |
-| :------------------------------------------------ | :----------------------------------------------------- |
-| <img src="https://skillicons.dev/icons?i=js" />   | [JS](https://rubyonrails.org/)  - Programming Language |
-| <img src="https://skillicons.dev/icons?i=css" />  | [CSS3](https://mysql.com/) - Cascading stylesheets     |
-| <img src="https://skillicons.dev/icons?i=html" /> | [HTML5](https://mysql.com/) - Mark Language            |
-|                                                   |                                                        |
+|                                                   |                                                                                    |
+| :------------------------------------------------ | :--------------------------------------------------------------------------------- |
+| <img src="https://skillicons.dev/icons?i=js" />   | [JS](https://developer.mozilla.org/es/docs/Web/JavaScript)  - Programming Language |
+| <img src="https://skillicons.dev/icons?i=css" />  | [CSS3](https://mysql.com/) - Cascading stylesheets                                 |
+| <img src="https://skillicons.dev/icons?i=html" /> | [HTML5](https://developer.mozilla.org/es/docs/Web/HTML) - Mark Language            |
+|                                                   |                                                                                    |
 
 ## Features
 
