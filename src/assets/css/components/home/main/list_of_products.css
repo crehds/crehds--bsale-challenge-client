@@ -11,13 +11,16 @@
 
 .product-card {
   text-align: center;
-  width: 25rem;
-  height: 35rem;
+  width: 21vw;
+  height: 38vh;
   display: flex;
   flex-direction: column;
   gap: 1rem;
   border-radius: 0.8rem;
-  border: 3px solid var(--secondary-200);
+  border: 3px solid var(--primary-300);
+  font-size: 1.4rem;
+  background-color: var(--lightblue-gray-100);
+  color: var(--lightblue-gray-200);
 }
 
 .product-image {
@@ -28,6 +31,7 @@
 .product-image img {
   width: 100%;
   height: 100%;
+  background-color: var(--white);
   border-top-left-radius: 0.8rem;
   border-top-right-radius: 0.8rem;
 }

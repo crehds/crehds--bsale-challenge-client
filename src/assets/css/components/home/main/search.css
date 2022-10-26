@@ -11,6 +11,7 @@
   letter-spacing: 0.15rem;
   display: flex;
   gap: 2rem;
+  color: var(--primary-200);
 }
 
 .js--search--products label p {
@@ -21,11 +22,35 @@
 .js--search--products label input {
   border-radius: 0.4rem;
   padding: 0.4rem 0.8rem;
+  border: 2px solid var(--primary-200);
+  color: var(--lightblue-gray-400);
+  background-color: transparent;
+}
+
+.js--search--products label input:hover {
+  border: 2px solid var(--primary-300);
+}
+
+.js--search--products label input:focus {
+  outline: none;
+  border: 2px solid var(--primary-300);
+}
+
+.js--search--products label input::placeholder {
+  color: var(--primary-alpha-100);
 }
 
 .js--search--products button {
-  padding: 0.4rem;
+  padding: 0.4rem 0.6rem;
   border-radius: 0.4rem;
   text-transform: uppercase;
   letter-spacing: 0.15rem;
+  border: none;
+  color: var(--gray-300);
+}
+
+.js--search--products button:hover {
+  cursor: pointer;
+  color: var(--primary-100);
+  background-color: var(--red-1);
 }
