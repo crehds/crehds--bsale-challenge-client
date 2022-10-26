@@ -75,7 +75,7 @@ const handleProductsByName = async (event) => {
   const { names } = event.target;
   LoadModule(Spinner, '.js--list--products');
   activeCategory();
-  await productsService.getProductsByName(names.value);
+  await productsService.getProductsByName({ name1: names.value });
   LoadModule(ListOfProducts, '.js--list--products');
 };
 
