@@ -1,7 +1,7 @@
 import BASE_URI from '../config/config.js';
 import Store from '../store/store.js';
 
-async function getCategoriesFromAPI() {
+async function getCategories() {
   const response = await fetch(`${BASE_URI}/categories`);
 
   if (response.ok) {
@@ -13,4 +13,4 @@ async function getCategoriesFromAPI() {
   throw new Error(response.status.text);
 }
 
-export default getCategoriesFromAPI;
+export default getCategories;
