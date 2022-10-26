@@ -19,6 +19,7 @@ async function getProductsByName(names) {
 
   if (response.ok) {
     const productsByNames = await response.json();
+    Store.setCurrentCategory({ category: '' });
     return Store.setProducts(productsByNames);
   }
 
