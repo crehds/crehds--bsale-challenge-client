@@ -16,7 +16,7 @@ const createList = (list) => {
   return `<ul class="navbar--list">${items}</ul>`;
 };
 
-const createNav = () => {
+const NavBar = () => {
   const { categories } = Store.store;
   const list = createList(categories);
   return `<nav class="navbar">
@@ -30,4 +30,4 @@ const createNav = () => {
     </nav>`;
 };
 
-export default createNav;
+export default NavBar;

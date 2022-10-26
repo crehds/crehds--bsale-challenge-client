@@ -1,5 +1,5 @@
-import createMain from '../components/createMain.js';
-import createNavBar from '../components/createNav.js';
+import Main from '../components/Main.js';
+import NavBar from '../components/NavBar.js';
 import ListOfProducts from '../components/ListOfProducts.js';
 import { listenerForm } from '../components/Search.js';
 import Spinner from '../components/Spinner.js';
@@ -11,7 +11,9 @@ import Store from '../store/store.js';
 import Component from '../utils/Component.js';
 
 function render() {
-  return `<div class="home">${createNavBar()}${createMain()}</div>`;
+  const navbar = NavBar();
+  const main = Main();
+  return `<div class="home">${navbar}${main}</div>`;
 }
 
 async function changeProducts(category) {
