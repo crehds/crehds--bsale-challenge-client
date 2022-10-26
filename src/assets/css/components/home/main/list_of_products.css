@@ -9,6 +9,27 @@
   padding: 0.8rem;
 }
 
+::-webkit-scrollbar-thumb {
+  background: rgb(94, 93, 93);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar:hover {
+  background: #b3b3b3;
+  box-shadow: 2px1pxrgba 0, 0, 0, 0.2;
+}
+
+::-webkit-scrollbar:hover:active {
+  background: #999;
+}
+
 .product-card {
   text-align: center;
   display: flex;
