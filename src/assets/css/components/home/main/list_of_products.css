@@ -33,3 +33,18 @@
   border-top-left-radius: 0.8rem;
   border-top-right-radius: 0.8rem;
 }
+
+.prices {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.prices p:nth-of-type(1) {
+  text-decoration: line-through;
+  color: var(--red-1);
+}
+
+.prices p:nth-of-type(2) {
+  color: var(--primary-300);
+}

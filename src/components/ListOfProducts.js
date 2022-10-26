@@ -4,6 +4,27 @@ import Empty from './Empty.js';
 
 const DEFAULT_IMAGE = '../src/assets/images/default-image.jpg';
 
+function isProductWithDiscount(discount, price) {
+  const formatPrice = new Intl.NumberFormat('ch-CH', {
+    style: 'currency',
+    currency: 'CLP'
+  }).format(price);
+  if (discount) {
+    const discountNumber = Math.round((price * discount) / 100);
+    const priceWithDiscount = price - discountNumber;
+    const formatPriceWithDiscount = new Intl.NumberFormat('ch-CH', {
+      style: 'currency',
+      currency: 'CLP'
+    }).format(priceWithDiscount);
+    return `<div class="prices">
+      <p>${formatPrice}</p>
+      <p>${formatPriceWithDiscount}</p>
+    </div>`;
+  }
+
+  return `<p>${formatPrice}</p>`;
+}
+
 function createProducts(products) {
   return products.reduce((memo, item) => {
     let tmp = memo;
@@ -12,7 +33,7 @@ function createProducts(products) {
                 <img src=${item.url_image || DEFAULT_IMAGE} />
               </figure>
               <p>${item.name}</p>
-              <p>${item.price}</p>
+              ${isProductWithDiscount(item.discount, item.price)}
             </div>`;
     return tmp;
   }, '');
