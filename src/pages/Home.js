@@ -70,6 +70,18 @@ async function preloadCategories() {
   }
 }
 
+const handleLogo = async () => {
+  LoadModule(Spinner, '.js--list--products');
+  await productsService.getProductsByName({ name1: '' });
+  LoadModule(ListOfProducts, '.js--list--products');
+  activeCategory();
+};
+
+const listenerToLogo = () => {
+  const logo = document.querySelector('.logo--nav__container');
+  logo.addEventListener('click', handleLogo);
+};
+
 const handleProductsByName = async (event) => {
   event.preventDefault();
   const { names } = event.target;
@@ -83,10 +95,9 @@ const listenerForm = () => {
   const form = document.querySelector('.js--search--products');
   form.addEventListener('submit', handleProductsByName);
 };
-
 const Home = Component({
   render,
-  listeners: [listenersToCategories, listenerForm],
+  listeners: [listenersToCategories, listenerForm, listenerToLogo],
   preloaders: [preloadCategories]
 });
 
