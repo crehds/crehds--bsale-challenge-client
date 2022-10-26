@@ -6,6 +6,7 @@
 @import url('./components/home/main/list_of_products.css');
 @import url('./components/home/main/search.css');
 @import url('./components/home/home.css');
+@import url('./spinners/spinner.css');
 
 body {
   background-color: rgba(195, 195, 195, 0.9);
