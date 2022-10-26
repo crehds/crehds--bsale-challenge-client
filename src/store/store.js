@@ -4,7 +4,7 @@
 const store = {
   categories: [],
   currentCategory: {},
-  productsByCategory: []
+  products: []
 };
 
 function setCategories(newCategories) {
@@ -27,8 +27,8 @@ function setCurrentProduct(newProduct) {
   store.currentProduct = newProduct;
 }
 
-function setProductsByCategory(newProducts) {
-  store.productsByCategory = [...newProducts];
+function setProducts(newProducts) {
+  store.products = [...newProducts];
 }
 
 export default {
@@ -36,6 +36,6 @@ export default {
   setCategories,
   setCurrentCategory,
   setCurrentProduct,
-  setProductsByCategory,
+  setProducts,
   updateCategory
 };
