@@ -37,7 +37,7 @@
 }
 
 .js--search--products label input::placeholder {
-  color: var(--primary-alpha-100);
+  color: var(--lightblue-gray-alpha-100);
 }
 
 .js--search--products button {
