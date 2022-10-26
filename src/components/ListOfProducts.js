@@ -1,5 +1,6 @@
 import Store from '../store/store.js';
 import Component from '../utils/Component.js';
+import Empty from './Empty.js';
 
 const DEFAULT_IMAGE = '../src/assets/images/default-image.jpg';
 
@@ -23,6 +24,9 @@ function createListOfProduct(productsList) {
 
 function render() {
   const { products } = Store.store;
+  if (products.length === 0) {
+    return Empty();
+  }
   return createListOfProduct(products);
 }
 
